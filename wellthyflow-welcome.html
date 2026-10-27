@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to WellthyFlow — Your Protocol Starts Now</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F73TB21Q9B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('js', new Date());
+  gtag('config', 'G-F73TB21Q9B');
+  gtag('event', 'purchase', { 'currency': 'USD', 'value': 45, 'items': [{ 'item_name': 'WellthyFlow' }] });
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:#060A06;}
+::-webkit-scrollbar-thumb{background:#4A9A6A;border-radius:2px;}
+body{background:#060A06;color:#F2EFE8;font-family:"Inter",sans-serif;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;transition:all .3s;}
+img{max-width:100%;}
+
+/* ACCENT BAR */
+.abar{height:5px;background:linear-gradient(90deg,#1A3A2A,#C9A84C,#4A9A6A,#C9A84C,#1A3A2A);}
+
+/* NAV */
+nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.12);padding:0 36px;height:62px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);}
+.nav-logo{height:28px;width:auto;display:block;}
+.nav-link{font-size:11px;letter-spacing:.12em;color:#3A5A3A;font-weight:400;transition:color .3s;}
+.nav-link:hover{color:#4A9A6A;}
+.nav-links{display:flex;align-items:center;gap:36px;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+@keyframes checkDrop{0%{transform:scale(0) rotate(-10deg);opacity:0;}60%{transform:scale(1.1) rotate(3deg);}100%{transform:scale(1) rotate(0deg);opacity:1;}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.on{opacity:1;transform:translateY(0);}
+
+/* SUCCESS BANNER */
+.success-banner{background:linear-gradient(135deg,#0C1E0C,#0A150A);border-bottom:1px solid rgba(74,154,106,.2);padding:14px 28px;text-align:center;}
+.success-banner-inner{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
+.success-tick{width:18px;height:18px;background:#4A9A6A;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:checkDrop .6s ease .3s both;}
+.success-tick svg{width:10px;height:10px;}
+.success-text{font-size:12px;letter-spacing:.08em;color:#4A9A6A;font-weight:500;}
+.success-text strong{color:#F2EFE8;}
+
+/* HERO */
+.hero{padding:80px 28px 64px;text-align:center;position:relative;overflow:hidden;animation:fadeUp .8s ease forwards;}
+.hero-ring{position:absolute;border-radius:50%;pointer-events:none;}
+.hr1{width:480px;height:480px;border:1px solid rgba(74,154,106,.07);top:50%;left:50%;transform:translate(-50%,-50%);}
+.hr2{width:300px;height:300px;border:1px solid rgba(201,168,76,.05);top:50%;left:50%;transform:translate(-50%,-50%);}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.welcome-label{font-size:9px;letter-spacing:.36em;color:#4A9A6A;font-weight:600;margin-bottom:16px;display:block;}
+.hero-h{font-family:"Cormorant Garamond",serif;font-size:clamp(2.4rem,6vw,4.4rem);font-weight:700;line-height:1.1;margin-bottom:16px;}
+.hero-h em{color:#C9A84C;font-style:italic;}
+.hero-rule{height:1px;background:linear-gradient(90deg,transparent,#4A9A6A,transparent);width:80px;margin:0 auto 24px;}
+.hero-sub{font-size:15px;color:#3A5A3A;font-weight:300;line-height:1.9;max-width:560px;margin:0 auto;}
+
+/* ORDER CONFIRM CARD */
+.confirm-card{max-width:540px;margin:40px auto 0;background:#0A100A;border:1px solid rgba(74,154,106,.15);padding:28px 32px;}
+.confirm-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(74,154,106,.08);}
+.confirm-row:last-child{border-bottom:none;padding-bottom:0;}
+.confirm-label{font-size:11px;letter-spacing:.1em;color:#2A4A2A;}
+.confirm-value{font-size:12px;color:#F2EFE8;font-weight:500;text-align:right;}
+.confirm-value.gold{color:#C9A84C;font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:700;}
+
+/* SECTION */
+.section{padding:80px 28px;}
+.sw{max-width:1000px;margin:0 auto;}
+.slabel{font-size:9px;letter-spacing:.32em;color:#4A9A6A;font-weight:600;text-align:center;display:block;margin-bottom:12px;}
+.stitle{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.15;text-align:center;margin-bottom:12px;}
+.stitle em{color:#C9A84C;font-style:italic;}
+.srule{height:1px;background:linear-gradient(90deg,transparent,#4A9A6A,transparent);width:60px;margin:0 auto 16px;}
+.ssub{color:#3A5A3A;font-size:13.5px;font-weight:300;text-align:center;max-width:500px;margin:0 auto 48px;line-height:1.85;}
+
+/* NEXT STEPS */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0;}
+.step-card{background:#0A100A;padding:32px 28px;text-align:center;}
+.step-num{font-family:"Cormorant Garamond",serif;font-size:3rem;font-weight:700;color:rgba(74,154,106,.2);line-height:1;margin-bottom:14px;}
+.step-icon{font-size:22px;margin-bottom:12px;}
+.step-title{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-weight:700;color:#F2EFE8;margin-bottom:8px;}
+.step-body{font-size:12px;color:#3A5A3A;line-height:1.75;}
+.step-tag{display:inline-block;margin-top:12px;font-size:9px;letter-spacing:.14em;color:#C9A84C;background:rgba(201,168,76,.08);padding:3px 10px;}
+
+/* DAY 1 PRIMER */
+.primer-section{background:#060D06;padding:80px 28px;}
+.primer-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:0;}
+.primer-card{background:#0A100A;padding:28px;border-left:3px solid transparent;transition:border-color .3s;}
+.primer-card:hover{border-left-color:#4A9A6A;}
+.primer-num{font-size:9px;letter-spacing:.2em;color:#C9A84C;font-weight:700;margin-bottom:6px;}
+.primer-title{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:700;color:#F2EFE8;margin-bottom:8px;}
+.primer-body{font-size:12px;color:#3A5A3A;line-height:1.75;}
+.primer-note{display:inline-block;margin-top:10px;font-size:10px;letter-spacing:.1em;color:#4A9A6A;}
+
+/* AFFILIATE PARTNERS */
+.partners-section{padding:80px 28px;}
+.partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0;}
+.partner-card{background:#0A100A;padding:28px;display:flex;flex-direction:column;}
+.partner-badge{font-size:8px;letter-spacing:.2em;color:#4A9A6A;font-weight:600;margin-bottom:10px;}
+.partner-name{font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:700;color:#F2EFE8;margin-bottom:6px;}
+.partner-desc{font-size:12px;color:#3A5A3A;line-height:1.7;flex:1;margin-bottom:16px;}
+.partner-discount{font-size:10px;color:#C9A84C;letter-spacing:.08em;margin-bottom:12px;}
+.partner-btn{display:block;padding:10px 16px;font-size:10px;font-weight:700;letter-spacing:.1em;text-align:center;transition:all .3s;}
+.partner-btn.gold{background:linear-gradient(135deg,#C9A84C,#9A7030);color:#060A06;}
+.partner-btn.outline{border:1px solid rgba(74,154,106,.3);color:#4A9A6A;}
+.partner-btn:hover{opacity:.8;}
+.partner-btn.disabled{opacity:.35;pointer-events:none;cursor:not-allowed;}
+
+/* COLLECTIVE TEASER */
+.collective-section{background:#060D06;padding:80px 28px;text-align:center;}
+.collective-inner{max-width:580px;margin:0 auto;}
+.coming-tag{display:inline-block;font-size:9px;letter-spacing:.24em;color:#C9A84C;border:1px solid rgba(201,168,76,.25);padding:5px 14px;margin-bottom:20px;}
+.collective-h{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.15;margin-bottom:14px;}
+.collective-h em{color:#C9A84C;font-style:italic;}
+.collective-sub{font-size:13.5px;color:#3A5A3A;font-weight:300;line-height:1.85;margin-bottom:32px;}
+.collective-features{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:32px;}
+.coll-feat{font-size:10px;letter-spacing:.1em;color:#4A9A6A;background:rgba(74,154,106,.08);border:1px solid rgba(74,154,106,.12);padding:6px 14px;}
+.notify-form{display:flex;max-width:400px;margin:0 auto;}
+.notify-input{flex:1;padding:13px 16px;background:#0C120C;border:1px solid rgba(74,154,106,.2);border-right:none;color:#F2EFE8;font-size:13px;outline:none;font-family:"Inter",sans-serif;}
+.notify-input::placeholder{color:#2A4A2A;}
+.notify-btn{padding:13px 20px;background:linear-gradient(135deg,#C9A84C,#9A7030);color:#060A06;font-size:11px;font-weight:700;letter-spacing:.1em;border:none;cursor:pointer;font-family:"Inter",sans-serif;white-space:nowrap;}
+
+/* SUPPORT */
+.support-section{padding:64px 28px;text-align:center;}
+.support-inner{max-width:480px;margin:0 auto;}
+.support-h{font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-weight:700;margin-bottom:10px;}
+.support-body{font-size:13px;color:#3A5A3A;line-height:1.85;margin-bottom:20px;}
+.support-email{display:inline-block;font-size:12px;color:#4A9A6A;border-bottom:1px solid rgba(74,154,106,.3);padding-bottom:2px;}
+.support-email:hover{color:#C9A84C;border-bottom-color:#C9A84C;}
+
+/* FOOTER */
+footer{background:#060A06;border-top:1px solid rgba(74,154,106,.1);padding:40px 28px 24px;}
+.foot-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:28px;}
+.foot-brand{max-width:260px;}
+.foot-logo{height:22px;margin-bottom:12px;}
+.foot-desc{font-size:11px;color:#1A3A2A;line-height:1.8;font-weight:300;}
+.foot-nav{display:flex;gap:44px;flex-wrap:wrap;}
+.foot-col-title{font-size:9px;letter-spacing:.2em;color:#2A4A2A;font-weight:600;margin-bottom:12px;}
+.foot-links{display:flex;flex-direction:column;gap:8px;}
+.foot-link{font-size:11px;color:#1A3A2A;transition:color .3s;}
+.foot-link:hover{color:#4A9A6A;}
+.foot-bottom{border-top:1px solid rgba(74,154,106,.07);padding-top:18px;margin-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.foot-copy{font-size:10px;color:#1A3A2A;}
+.foot-legal{display:flex;gap:14px;}
+.foot-legal a{font-size:10px;color:#1A3A2A;}
+.foot-legal a:hover{color:#4A9A6A;}
+
+/* LOGO SVG */
+.nav-logo-svg{height:28px;width:auto;}
+
+@media(max-width:768px){
+  .steps-grid,.primer-grid,.partner-grid{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .confirm-card{padding:20px;}
+  .foot-nav{gap:24px;}
+}
+</style>
+</head>
+<body>
+
+<div class="abar"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="/index.html">
+    <svg viewBox="0 0 240 40" width="192" height="32" xmlns="http://www.w3.org/2000/svg" class="nav-logo-svg">
+      <text x="0" y="22" font-family="Georgia,'Times New Roman',serif" font-size="16" font-weight="700" letter-spacing="4" fill="#F2EFE8">WELLTHY</text>
+      <text x="122" y="22" font-family="Georgia,'Times New Roman',serif" font-size="16" font-weight="700" letter-spacing="4" fill="#C9A84C">LIVIN</text>
+      <line x1="0" y1="27" x2="228" y2="27" stroke="#4A9A6A" stroke-width="0.5" opacity="0.55"/>
+      <text x="0" y="36" font-family="Georgia,'Times New Roman',serif" font-size="6.5" letter-spacing="2" fill="#4A9A6A">LIVE HEALTHY · LIVE WELLTHY</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="/index.html" class="nav-link">HOME</a>
+    <a href="/blog" class="nav-link">BLOG</a>
+    <a href="/gear.html" class="nav-link">GEAR</a>
+    <a href="mailto:hello@wellthylivin.com" class="nav-link">SUPPORT</a>
+  </div>
+  <a href="mailto:hello@wellthylivin.com" style="padding:9px 22px;background:linear-gradient(135deg,#C9A84C,#9A7030);color:#060A06;font-size:11px;font-weight:700;letter-spacing:.12em;">NEED HELP?</a>
+</nav>
+
+<!-- SUCCESS BANNER -->
+<div class="success-banner">
+  <div class="success-banner-inner">
+    <div class="success-tick">
+      <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="success-text"><strong>Payment confirmed.</strong> Your copy of WellthyFlow is being delivered to your inbox right now.</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ring hr1"></div>
+  <div class="hero-ring hr2"></div>
+  <div class="hero-inner">
+    <span class="welcome-label">WELCOME TO WELLTHYFLOW</span>
+    <h1 class="hero-h">You made the decision.<br>The protocol begins <em>now.</em></h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Most people spend months searching for the right system. You found it. In 30 days this will not feel like discipline — it will feel like who you are.</p>
+
+    <!-- Order confirm -->
+    <div class="confirm-card">
+      <div class="confirm-row">
+        <span class="confirm-label">PRODUCT</span>
+        <span class="confirm-value">WellthyFlow — 30-Day Performance System</span>
+      </div>
+      <div class="confirm-row">
+        <span class="confirm-label">FORMAT</span>
+        <span class="confirm-value">Instant PDF Download · 50 pages</span>
+      </div>
+      <div class="confirm-row">
+        <span class="confirm-label">DELIVERY</span>
+        <span class="confirm-value">Check your email — arrives within 5 minutes</span>
+      </div>
+      <div class="confirm-row">
+        <span class="confirm-label">AMOUNT PAID</span>
+        <span class="confirm-value gold">$45 one time</span>
+      </div>
+      <div class="confirm-row">
+        <span class="confirm-label">SUPPORT</span>
+        <span class="confirm-value"><a href="mailto:hello@wellthylivin.com" style="color:#4A9A6A;">hello@wellthylivin.com</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="section reveal" id="next">
+  <div class="sw">
+    <span class="slabel">WHAT HAPPENS NOW</span>
+    <h2 class="stitle">Three steps to <em>Day 1.</em></h2>
+    <div class="srule"></div>
+    <p class="ssub">The protocol is in your inbox. Here is exactly what to do in the next 24 hours.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon">📥</div>
+        <h3 class="step-title">Check your inbox</h3>
+        <p class="step-body">Gumroad sends your PDF download link immediately. Check your spam folder if it doesn't arrive within 5 minutes. You own this file permanently — no logins, no expiry.</p>
+        <span class="step-tag">DO THIS FIRST</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon">📖</div>
+        <h3 class="step-title">Read the first 3 sections tonight</h3>
+        <p class="step-body">Read the Welcome, the Philosophy, and the Self-Assessment Quiz tonight. Set your wake time for tomorrow. Write your identity declaration before you sleep. 20 minutes maximum.</p>
+        <span class="step-tag">TONIGHT</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon">⚡</div>
+        <h3 class="step-title">Execute Day 1 tomorrow</h3>
+        <p class="step-body">Wake at your committed time. Follow the Day 1 checklist exactly. Do not modify the protocol on Day 1. Trust the system — your only job is to show up and follow the list.</p>
+        <span class="step-tag">TOMORROW MORNING</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 1 PRIMER -->
+<section class="primer-section reveal">
+  <div class="sw">
+    <span class="slabel">DO THIS TODAY</span>
+    <h2 class="stitle">Before Day 1 starts — <em>prepare the environment.</em></h2>
+    <div class="srule"></div>
+    <p class="ssub">Day 1 success is decided the night before. Four things to do before you sleep tonight.</p>
+    <div class="primer-grid">
+      <div class="primer-card">
+        <div class="primer-num">TONIGHT — 01</div>
+        <h3 class="primer-title">Clear the kitchen</h3>
+        <p class="primer-body">Remove all processed food, sugar, alcohol, and junk from your home right now. Not tomorrow. Tonight. Your environment is either reinforcing your old identity or your new one. Clean fuel starts with a clean kitchen.</p>
+        <span class="primer-note">→ Takes 10 minutes. Non-negotiable.</span>
+      </div>
+      <div class="primer-card">
+        <div class="primer-num">TONIGHT — 02</div>
+        <h3 class="primer-title">Set your wake time</h3>
+        <p class="primer-body">Decide on your wake time for all 30 days and set it right now. The same time every single day — including weekends. Write it down. This is the first commitment of your new identity.</p>
+        <span class="primer-note">→ Recommended: 05:30–06:00.</span>
+      </div>
+      <div class="primer-card">
+        <div class="primer-num">TONIGHT — 03</div>
+        <h3 class="primer-title">Write your identity declaration</h3>
+        <p class="primer-body">Open page 7 of WellthyFlow and write your identity declaration tonight. "I am someone who..." — present tense, specific, and true even if it doesn't feel true yet. You will read this aloud every morning for 30 days.</p>
+        <span class="primer-note">→ See page 7 of your PDF.</span>
+      </div>
+      <div class="primer-card">
+        <div class="primer-num">TONIGHT — 04</div>
+        <h3 class="primer-title">Delete social apps until tomorrow</h3>
+        <p class="primer-body">Remove Instagram, TikTok, and X from your phone home screen tonight. You're not deleting the accounts — just removing the frictionless access. Your first morning block happens before any social input enters your mind.</p>
+        <span class="primer-note">→ Reinstall after your first deep work block tomorrow.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AFFILIATE PARTNERS -->
+<section class="partners-section reveal">
+  <div class="sw">
+    <span class="slabel">RECOMMENDED TOOLS</span>
+    <h2 class="stitle">Products that <em>stack with the protocol.</em></h2>
+    <div class="srule"></div>
+    <p class="ssub">Every product below has been tested and vetted by the Wellthy team. None are required — but all will accelerate your results when combined with the system.</p>
+    <div class="partner-grid">
+
+      <!-- Magic Mind -->
+      <div class="partner-card">
+        <div class="partner-badge">✓ WELLTHY APPROVED — COGNITIVE FOCUS</div>
+        <h3 class="partner-name">Magic Mind</h3>
+        <p class="partner-desc">A 2oz productivity shot formulated with matcha, lion's mane, ashwagandha and 12 other active ingredients. Engineered to enhance focus, reduce stress, and replace the cortisol spike from coffee on an empty stomach — which WellthyFlow specifically tells you to stop.</p>
+        <p class="partner-discount">Use code WELLTHY for discount at checkout.</p>
+        <a href="https://magicmind.com/SFJWBMWG" target="_blank" rel="noopener" class="partner-btn gold">SHOP MAGIC MIND →</a>
+      </div>
+
+      <!-- Swanwick -->
+      <div class="partner-card">
+        <div class="partner-badge">✓ WELLTHY APPROVED — SLEEP PROTOCOL</div>
+        <h3 class="partner-name">Swanwick Night Swannies</h3>
+        <p class="partner-desc">Blue-light blocking glasses worn after 9pm to protect melatonin production. WellthyFlow's sleep protocol is built around amber light after 9pm — these are the exact glasses used to execute it. Your deep sleep quality determines your next day's focus capacity.</p>
+        <p class="partner-discount">Wellthy partner — use link for discount.</p>
+        <a href="https://swanwicksleep.com/?ref=VICTORFIDERIKUMO" target="_blank" rel="noopener" class="partner-btn gold">SHOP SWANWICK →</a>
+      </div>
+
+      <!-- Time Timer -->
+      <div class="partner-card">
+        <div class="partner-badge">COMING SOON — DEEP WORK TOOL</div>
+        <h3 class="partner-name">Time Timer</h3>
+        <p class="partner-desc">A visual countdown timer specifically designed for deep work blocks. The WellthyFlow protocol uses 45-minute focus blocks — a visual timer removes the phone from your work environment entirely. Approval pending.</p>
+        <p class="partner-discount">Discount code coming soon.</p>
+        <a href="#" class="partner-btn outline disabled">COMING SOON</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WELLTHY COLLECTIVE TEASER -->
+<section class="collective-section reveal">
+  <div class="collective-inner">
+    <span class="coming-tag">COMING MONTH 4</span>
+    <h2 class="collective-h">The next level is <em>the Collective.</em></h2>
+    <p class="collective-sub">All three Wellthy protocols. A private community of people running the same system. Monthly accountability calls. The full operating system for people who made the permanent decision.</p>
+    <div class="collective-features">
+      <span class="coll-feat">ALL 3 PROTOCOLS</span>
+      <span class="coll-feat">PRIVATE COMMUNITY</span>
+      <span class="coll-feat">MONTHLY CALLS</span>
+      <span class="coll-feat">$29/MONTH</span>
+      <span class="coll-feat">EARLY ACCESS</span>
+    </div>
+    <p style="font-size:12px;color:#2A4A2A;margin-bottom:20px;">Get notified when the Wellthy Collective opens. Early members get locked pricing forever.</p>
+    <div id="collective-wrap">
+      <div class="notify-form">
+        <input type="email" id="collective-email" placeholder="Your email address" class="notify-input">
+        <button onclick="notifyCollective()" class="notify-btn">NOTIFY ME</button>
+      </div>
+    </div>
+    <div id="collective-success" style="display:none;font-size:13px;color:#4A9A6A;margin-top:14px;letter-spacing:.04em;">✓ You're on the early access list. We'll reach out when the Collective opens.</div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="support-section reveal">
+  <div class="support-inner">
+    <h2 class="support-h">We're here for you.</h2>
+    <p class="support-body">Have a question about the protocol? Something not working? Want to share a win? We read every email personally. This is not a support ticket system — it's a direct line.</p>
+    <a href="mailto:hello@wellthylivin.com" class="support-email">hello@wellthylivin.com</a>
+    <p style="font-size:11px;color:#2A4A2A;margin-top:16px;letter-spacing:.06em;">7-DAY MONEY-BACK GUARANTEE · NO QUESTIONS ASKED</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner" style="display:block;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:28px;margin-bottom:28px;">
+      <div class="foot-brand">
+        <svg viewBox="0 0 240 40" width="160" height="27" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-bottom:12px;">
+          <text x="0" y="22" font-family="Georgia,'Times New Roman',serif" font-size="16" font-weight="700" letter-spacing="4" fill="#F2EFE8">WELLTHY</text>
+          <text x="122" y="22" font-family="Georgia,'Times New Roman',serif" font-size="16" font-weight="700" letter-spacing="4" fill="#C9A84C">LIVIN</text>
+          <line x1="0" y1="27" x2="228" y2="27" stroke="#4A9A6A" stroke-width="0.5" opacity="0.55"/>
+          <text x="0" y="36" font-family="Georgia,'Times New Roman',serif" font-size="6.5" letter-spacing="2" fill="#4A9A6A">LIVE HEALTHY · LIVE WELLTHY</text>
+        </svg>
+        <p class="foot-desc">Systems over motivation. Discipline over inspiration. The performance system that starts with your body — not your schedule.</p>
+      </div>
+      <div class="foot-nav">
+        <div>
+          <div class="foot-col-title">PROTOCOLS</div>
+          <div class="foot-links">
+            <a href="/free-reset.html" class="foot-link">Free 3-Day Reset</a>
+            <a href="https://wellthylivin.gumroad.com/l/nkazc" class="foot-link">WellthyReset — $21</a>
+            <a href="https://wellthylivin.gumroad.com/l/evhjy" class="foot-link">WellthyFlow — $45</a>
+          </div>
+        </div>
+        <div>
+          <div class="foot-col-title">SITE</div>
+          <div class="foot-links">
+            <a href="/index.html" class="foot-link">Home</a>
+            <a href="/blog" class="foot-link">Blog</a>
+            <a href="/gear.html" class="foot-link">Gear</a>
+          </div>
+        </div>
+        <div>
+          <div class="foot-col-title">LEGAL</div>
+          <div class="foot-links">
+            <a href="/privacy-policy.html" class="foot-link">Privacy Policy</a>
+            <a href="/terms-of-service.html" class="foot-link">Terms of Service</a>
+            <a href="/refund-policy.html" class="foot-link">Refund Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">© 2026 Wellthy Livin. All rights reserved. Results may vary — individual outcomes depend on effort and adherence to the protocol.</span>
+      <div class="foot-legal">
+        <a href="/privacy-policy.html">Privacy</a>
+        <a href="/terms-of-service.html">Terms</a>
+        <a href="/refund-policy.html">Refunds</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="abar"></div>
+
+<script>
+// Collective early access signup
+function notifyCollective() {
+  var email = document.getElementById('collective-email').value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('collective-email').style.borderColor = 'rgba(192,96,64,.5)';
+    return;
+  }
+  var btn = document.querySelector('.notify-btn');
+  btn.textContent = 'Saving...';
+  btn.disabled = true;
+
+  fetch('https://api.beehiiv.com/v2/publications/pub_d9211856-e49d-40fb-9d96-8880290d4ab8/subscriptions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: email,
+      reactivate_existing: true,
+      utm_source: 'wellthyflow-welcome',
+      utm_medium: 'collective-waitlist'
+    })
+  }).then(function() {
+    document.getElementById('collective-wrap').style.display = 'none';
+    document.getElementById('collective-success').style.display = 'block';
+  }).catch(function() {
+    document.getElementById('collective-wrap').style.display = 'none';
+    document.getElementById('collective-success').style.display = 'block';
+  });
+}
+
+// Scroll reveals
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  const n = document.querySelector('nav');
+  n.style.borderBottomColor = window.scrollY > 60 ? 'rgba(74,154,106,.25)' : 'rgba(74,154,106,.12)';
+});
+</script>
+</body>
+</html>

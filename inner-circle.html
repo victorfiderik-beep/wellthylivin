@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to the Architecture — Wellthy Livin</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F73TB21Q9B">
+function openGumroad(el){
+  var url=el.href;
+  if(window.GumroadOverlay){window.GumroadOverlay.show(url);}
+  else{window.open(url,'_blank');}
+  return false;
+}
+</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-F73TB21Q9B');</script>
+<script type="text/javascript">
+!function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+pintrk('load','2614459967237');
+pintrk('page');
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#060A06;color:#F2EFE8;font-family:"Inter",sans-serif;min-height:100vh;}
+a{text-decoration:none;color:inherit;transition:all .3s;}
+.abar{height:5px;background:linear-gradient(90deg,#1A3A2A,#C9A84C,#4A9A6A,#C9A84C,#1A3A2A);}
+
+/* NAV */
+nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.15);padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{height:29px;width:auto;}
+
+/* SUCCESS BANNER */
+.success-bar{background:#0A180A;border-bottom:1px solid rgba(74,154,106,.25);padding:12px 28px;text-align:center;}
+.success-bar p{font-size:13px;color:#4A9A6A;}
+.success-bar strong{color:#F2EFE8;}
+
+/* HERO */
+.hero{max-width:760px;margin:0 auto;padding:64px 28px 0;text-align:center;}
+.hero-label{font-size:9px;letter-spacing:.32em;color:#C9A84C;font-weight:600;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.hero-label::before,.hero-label::after{content:"";flex:1;max-width:60px;height:1px;background:linear-gradient(90deg,transparent,#C9A84C);}
+.hero-label::after{background:linear-gradient(90deg,#C9A84C,transparent);}
+.hero-h{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;line-height:1.08;margin-bottom:16px;}
+.hero-h em{color:#C9A84C;font-style:italic;}
+.rule{height:1px;background:linear-gradient(90deg,transparent,#C9A84C,transparent);width:60px;margin:0 auto 24px;}
+.hero-sub{font-size:14px;color:#3A5A3A;line-height:1.9;max-width:580px;margin:0 auto 16px;font-weight:300;}
+.hero-sub2{font-size:13px;color:#2A4A2A;line-height:1.85;max-width:560px;margin:0 auto 56px;font-weight:300;font-style:italic;}
+
+/* SECTION LABEL */
+.section-label{font-size:9px;letter-spacing:.28em;color:#4A9A6A;font-weight:600;text-align:center;margin-bottom:40px;}
+
+/* PRODUCT CARDS */
+.products{max-width:760px;margin:0 auto;padding:0 28px;display:flex;flex-direction:column;gap:2px;}
+
+.prod-card{display:grid;grid-template-columns:48px 1fr;background:#0A100A;overflow:hidden;transition:background .3s;}
+.prod-card:hover{background:#0C140C;}
+
+.prod-num-col{background:#0C120C;border-right:1px solid rgba(74,154,106,.1);display:flex;align-items:flex-start;justify-content:center;padding:28px 0 0;}
+.prod-num{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:700;color:#1A3A2A;}
+
+.prod-body{padding:28px 28px 28px 24px;}
+.prod-tag{font-size:8px;letter-spacing:.22em;color:#4A9A6A;font-weight:600;margin-bottom:8px;}
+.prod-name{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:700;color:#F2EFE8;line-height:1.2;margin-bottom:10px;}
+
+.prod-bullets{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+.prod-bullet{display:flex;align-items:flex-start;gap:10px;}
+.bullet-label{font-size:9px;letter-spacing:.14em;color:#C9A84C;font-weight:600;flex-shrink:0;margin-top:2px;min-width:80px;}
+.bullet-text{font-size:12.5px;color:#3A5A3A;line-height:1.7;}
+.bullet-text strong{color:#D8D4CA;font-weight:600;display:block;margin-bottom:2px;}
+
+.prod-cta{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1px solid rgba(201,168,76,.3);color:#C9A84C;font-size:11px;font-weight:600;letter-spacing:.1em;transition:all .3s;}
+.prod-cta:hover{background:rgba(201,168,76,.08);border-color:rgba(201,168,76,.5);}
+.prod-cta-arrow{font-size:14px;transition:transform .3s;}
+.prod-cta:hover .prod-cta-arrow{transform:translateX(4px);}
+
+.todo-badge{display:inline-block;font-size:9px;letter-spacing:.12em;color:#1A3A2A;background:#0C120C;border:1px solid rgba(74,154,106,.1);padding:4px 10px;margin-left:8px;}
+
+/* DIVIDERS between cards */
+.prod-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(74,154,106,.1),transparent);margin:0;}
+
+/* BOTTOM SECTION */
+.bottom{max-width:760px;margin:52px auto 0;padding:0 28px 80px;}
+.bottom-rule{height:1px;background:linear-gradient(90deg,transparent,#C9A84C,transparent);margin-bottom:40px;}
+.bottom-h{font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:700;color:#F2EFE8;margin-bottom:10px;text-align:center;}
+.bottom-sub{font-size:13px;color:#3A5A3A;line-height:1.8;text-align:center;margin-bottom:28px;}
+.bottom-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{display:inline-block;padding:13px 28px;background:linear-gradient(135deg,#C9A84C,#9A7030);color:#060A06;font-size:11px;font-weight:700;letter-spacing:.12em;transition:opacity .3s;}
+.btn-gold:hover{opacity:.85;}
+.btn-outline{display:inline-block;padding:12px 24px;border:1px solid rgba(74,154,106,.25);color:#4A9A6A;font-size:11px;letter-spacing:.1em;transition:all .3s;}
+.btn-outline:hover{background:rgba(74,154,106,.06);}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(74,154,106,.1);padding:32px 28px 20px;}
+.foot-inner{max-width:760px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.foot-brand{font-family:"Cormorant Garamond",serif;font-size:15px;font-weight:700;color:#F2EFE8;}
+.foot-brand span{color:#C9A84C;}
+.foot-links{display:flex;gap:16px;}
+.foot-links a{font-size:11px;color:#1A3A2A;}
+.foot-links a:hover{color:#4A9A6A;}
+.foot-copy{font-size:10px;color:#1A3A2A;width:100%;}
+
+@media(max-width:600px){
+  .prod-card{grid-template-columns:1fr;}
+  .prod-num-col{display:none;}
+  .prod-body{padding:22px 20px;}
+}
+</style>
+</head>
+<body>
+<div class="abar"></div>
+
+<nav>
+  <a href="/index.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgNDAiIHdpZHRoPSIxOTIiIGhlaWdodD0iMzIiPgogIDx0ZXh0IHg9IjAiIHk9IjIyIiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjcwMCIgbGV0dGVyLXNwYWNpbmc9IjQiIGZpbGw9IiNGMkVGRTgiPldFTExUSFk8L3RleHQ+CiAgPHRleHQgeD0iMTIyIiB5PSIyMiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsJ1RpbWVzIE5ldyBSb21hbicsc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSI0IiBmaWxsPSIjQzlBODRDIj5MSVZJTjwvdGV4dD4KICA8bGluZSB4MT0iMCIgeTE9IjI3IiB4Mj0iMjI4IiB5Mj0iMjciIHN0cm9rZT0iIzRBOUE2QSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuNTUiLz4KICA8dGV4dCB4PSIwIiB5PSIzNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsJ1RpbWVzIE5ldyBSb21hbicsc2VyaWYiIGZvbnQtc2l6ZT0iNi41IiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iIzRBOUE2QSI+TElWRSBIRUFMVEhZIMK3IExJVkUgV0VMTFRIWTwvdGV4dD4KPC9zdmc+" alt="Wellthy Livin" class="nav-logo"></a>
+</nav>
+
+<!-- SUCCESS BANNER -->
+<div class="success-bar">
+  <p>✓ <strong>Welcome.</strong> Your 7-Day Foundation files and payment receipt have been dispatched to your inbox. Check your spam folder if they do not arrive within two minutes.</p>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">WELLTHY INNER CIRCLE</div>
+  <h1 class="hero-h">Welcome to<br>the <em>Architecture.</em></h1>
+  <div class="rule"></div>
+  <p class="hero-sub">The protocols inside the Reset system rely entirely on physical triggers. Rebuilding your mental software is only half the battle — you must optimise your environment's hardware to match.</p>
+  <p class="hero-sub2">To completely lock in your dopamine baseline and secure your deep work blocks, the Wellthy system recommends integrating these three physical non-negotiables into your routine.</p>
+</div>
+
+<!-- SECTION LABEL -->
+<div class="section-label">THE THREE PHYSICAL NON-NEGOTIABLES</div>
+
+<!-- PRODUCT CARDS -->
+<div class="products">
+
+  <!-- CARD 1 -->
+  <div class="prod-card">
+    <div class="prod-num-col"><div class="prod-num">01</div></div>
+    <div class="prod-body">
+      <div class="prod-tag">THE DOPAMINE ANCHOR — SUPPLEMENTS</div>
+      <div class="prod-name">Morning Optimisation Stack</div>
+      <div class="prod-bullets">
+        <div class="prod-bullet">
+          <div class="bullet-label">THE TOOL</div>
+          <div class="bullet-text"><strong>High-purity L-Tyrosine or Mushroom Coffee blends</strong>Delays your morning caffeine intake by 90–120 minutes without experiencing brain fog.</div>
+        </div>
+        <div class="prod-bullet">
+          <div class="bullet-label">WHY IT WORKS</div>
+          <div class="bullet-text">Fuels your natural morning dopamine production before your deep work block begins — completely avoiding the 3 PM adenosine crash outlined in Day 1 of your protocol.</div>
+        </div>
+      </div>
+      <a href="https://magicmind.com/SFJWBMWG" class="prod-cta" target="_blank">
+        EXPLORE THE MORNING STACK <span class="prod-cta-arrow">→</span>
+        <span class="todo-badge">ADD LINK</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="prod-divider"></div>
+
+  <!-- CARD 2 -->
+  <div class="prod-card">
+    <div class="prod-num-col"><div class="prod-num">02</div></div>
+    <div class="prod-body">
+      <div class="prod-tag">THE FOCUS FIREWALL — HARDWARE</div>
+      <div class="prod-name">Analog Visual Countdown Timer</div>
+      <div class="prod-bullets">
+        <div class="prod-bullet">
+          <div class="bullet-label">THE TOOL</div>
+          <div class="bullet-text"><strong>Analog visual countdown timer</strong>Willpower is a finite biological resource. A phone on your desk drops cognitive capacity by up to 20% — even face-down.</div>
+        </div>
+        <div class="prod-bullet">
+          <div class="bullet-label">WHY IT WORKS</div>
+          <div class="bullet-text">Gives your brain a physical, visible cue for your 45-minute deep work blocks — without requiring you to look at a screen or touch your phone to check the time.</div>
+        </div>
+      </div>
+      <a href="https://www.swanwicksleep.com/?ref=VICTORFIDERIKUMO" target="_blank" class="prod-cta" target="_blank">
+        SECURE THE ANALOG TIMER <span class="prod-cta-arrow">→</span>
+        <span class="todo-badge">ADD LINK</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="prod-divider"></div>
+
+  <!-- CARD 3 -->
+  <div class="prod-card">
+    <div class="prod-num-col"><div class="prod-num">03</div></div>
+    <div class="prod-body">
+      <div class="prod-tag">CIRCADIAN PROTECTION — LIGHT ARCHITECTURE</div>
+      <div class="prod-name">Premium Blue-Light Blocking Glasses</div>
+      <div class="prod-bullets">
+        <div class="prod-bullet">
+          <div class="bullet-label">THE TOOL</div>
+          <div class="bullet-text"><strong>Certified circadian blue-light blocking glasses</strong>Artificial blue light after 10 PM suppresses melatonin production for up to 3 hours.</div>
+        </div>
+        <div class="prod-bullet">
+          <div class="bullet-label">WHY IT WORKS</div>
+          <div class="bullet-text">Shields your photoreceptors during your evening wind-down — ensuring your brain shifts smoothly into deep Delta-wave sleep for maximum overnight cognitive repair.</div>
+        </div>
+      </div>
+      <a href="#" style="opacity:.4;pointer-events:none;" class="prod-cta" target="_blank">
+        VIEW CERTIFIED BLOCKERS <span class="prod-cta-arrow">→</span>
+        <span class="todo-badge">ADD LINK</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="bottom">
+  <div class="bottom-rule"></div>
+  <h2 class="bottom-h">Ready for the complete 30-day system?</h2>
+  <p class="bottom-sub">You have the 7-day foundation. WellthyFlow is the complete 30-day performance operating system — Monk Mode, deep work architecture, identity shift and full daily protocols across 4 weeks.</p>
+  <div class="bottom-btns">
+    <a href="https://wellthylivin.gumroad.com/l/evhjy?redirect=https://wellthylivin.com/wellthyflow-welcome" onclick="openGumroad(this);return false;" class="btn-gold">GET WELLTHYFLOW — $45 →</a>
+    <a href="/index.html" class="btn-outline">Back to site</a>
+  </div>
+</div>
+
+<footer>
+  <div class="abar" style="margin-bottom:28px;"></div>
+  <div class="foot-inner">
+    <div class="foot-brand">WELLTHY<span>LIVIN</span></div>
+    <div class="foot-links">
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms-of-service.html">Terms</a>
+      <a href="/refund-policy.html">Refunds</a>
+      <a href="mailto:hello@wellthylivin.com">Contact</a>
+    </div>
+    <div class="foot-copy">© 2026 Wellthy Livin · Live Healthy · Live Wellthy · Affiliate disclosure: some links on this page may earn a commission.</div>
+  </div>
+</footer>
+
+<script src="https://gumroad.com/js/gumroad.js"></script>
+<script>
+if(typeof pintrk!=='undefined') pintrk('track','checkout');
+</script>
+</body>
+</html>
