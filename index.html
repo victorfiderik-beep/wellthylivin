@@ -870,12 +870,11 @@ pintrk('page');
     <h2 class="final-h">30 days from now you will either have a new <em>system</em> — or another excuse.</h2>
     <div class="srule"></div>
     <p class="final-sub">The protocol is ready. The system is built. The only variable is you. Start free — no credit card required.</p>
-    <div id="final-form-wrap">
-      <div style="max-width:440px;margin:0 auto 8px;">
-        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="25c7e031-10cd-429c-97b5-7a5b2f857f1b"></script>
-      </div>
+    <form id="final-form" onsubmit="return handleFinalSubmit(event);" style="max-width:440px;margin:0 auto 8px;">
+      <input id="final-email" type="email" placeholder="Enter your email" required style="width:100%;padding:14px 16px;background:#080E08;border:1px solid rgba(74,154,106,.2);color:#F2EFE8;font-size:13px;font-family:Inter,sans-serif;outline:none;margin-bottom:10px;">
+      <button id="final-btn" type="submit" style="width:100%;padding:15px;background:linear-gradient(135deg,#C9A84C,#9A7030);color:#060A06;font-size:12px;font-weight:700;letter-spacing:.12em;border:none;cursor:pointer;">GET INSTANT ACCESS →</button>
       <div id="final-error" style="display:none;font-size:11px;color:#C06040;text-align:center;margin-top:6px;">Please enter a valid email address.</div>
-    </div>
+    </form>
     <div id="final-success" style="display:none;text-align:center;padding:8px 0;">
       <p style="font-size:14px;color:#4A9A6A;">✓ Check your inbox — your PDF arrives in 60 seconds.</p>
     </div>
@@ -963,6 +962,30 @@ function openGumroad(el) {
   } else {
     window.open(url, '_blank');
   }
+  return false;
+}
+</script>
+<script>
+function validateFinalEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
+async function handleFinalSubmit(ev){
+  ev.preventDefault();
+  var email=document.getElementById('final-email').value.trim();
+  var err=document.getElementById('final-error');
+  var btn=document.getElementById('final-btn');
+  if(!validateFinalEmail(email)){err.textContent='Please enter a valid email address.';err.style.display='block';return false;}
+  err.style.display='none';
+  btn.disabled=true;btn.textContent='Sending...';
+  try{
+    var r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'homepage'})});
+    var d=await r.json().catch(function(){return {};});
+    if(r.ok&&d.ok){window.location.href='/exclusive-offer.html?em='+encodeURIComponent(email);return false;}
+    err.textContent=(d&&d.error==='not_configured')?'Signup is being set up — please try again shortly.':'Something went wrong — please try again.';
+    err.style.display='block';
+  }catch(e){
+    err.textContent='Something went wrong — please try again.';
+    err.style.display='block';
+  }
+  btn.disabled=false;btn.textContent='GET INSTANT ACCESS →';
   return false;
 }
 </script>

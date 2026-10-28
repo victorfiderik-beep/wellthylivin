@@ -126,11 +126,12 @@ nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.15);pad
       <div class="card-label">GET INSTANT ACCESS — FREE</div>
       <h2 class="card-h">Enter your email.<br>PDF in 60 seconds.</h2>
       <p class="card-sub">Your guide arrives in your inbox immediately. No spam. Unsubscribe any time.</p>
-      <div id="form-state">
-        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="25c7e031-10cd-429c-97b5-7a5b2f857f1b"></script>
+      <form id="reset-form" class="form-group" onsubmit="return handleResetSubmit(event);">
+        <input id="reset-email" type="email" class="input-field" placeholder="Enter your email" required>
+        <button id="reset-btn" type="submit" class="submit-btn">GET INSTANT ACCESS →</button>
+        <p id="reset-err" class="error-msg">Please enter a valid email address.</p>
         <p class="form-note">No spam. Unsubscribe any time. You will receive the weekly Wellthy newsletter — systems for focus, energy and discipline.</p>
-      </div>
-      <p class="form-note" style="color:#3A5A3A;">Form not working? <a href="https://wellthylivin.beehiiv.com" target="_blank" rel="noopener" style="color:#C9A84C;text-decoration:underline;">Subscribe here instead →</a></p>
+      </form>
     </div>
     <div class="stats">
       <div class="stat"><div class="stat-n">247+</div><div class="stat-l">RESETS STARTED</div></div>
@@ -164,5 +165,29 @@ nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.15);pad
 
 <div class="abar"></div>
 
+<script>
+function validateResetEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
+async function handleResetSubmit(ev){
+  ev.preventDefault();
+  var email=document.getElementById('reset-email').value.trim();
+  var err=document.getElementById('reset-err');
+  var btn=document.getElementById('reset-btn');
+  if(!validateResetEmail(email)){err.textContent='Please enter a valid email address.';err.style.display='block';return false;}
+  err.style.display='none';
+  btn.disabled=true;btn.textContent='Sending...';
+  try{
+    var r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'free-reset-page'})});
+    var d=await r.json().catch(function(){return {};});
+    if(r.ok&&d.ok){window.location.href='/exclusive-offer.html?em='+encodeURIComponent(email);return false;}
+    err.textContent=(d&&d.error==='not_configured')?'Signup is being set up — please try again shortly.':'Something went wrong — please try again.';
+    err.style.display='block';
+  }catch(e){
+    err.textContent='Something went wrong — please try again.';
+    err.style.display='block';
+  }
+  btn.disabled=false;btn.textContent='GET INSTANT ACCESS →';
+  return false;
+}
+</script>
 </body>
 </html>
