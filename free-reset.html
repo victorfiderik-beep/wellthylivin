@@ -127,12 +127,7 @@ nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.15);pad
       <h2 class="card-h">Enter your email.<br>PDF in 60 seconds.</h2>
       <p class="card-sub">Your guide arrives in your inbox immediately. No spam. Unsubscribe any time.</p>
       <div id="form-state">
-        <div class="form-group">
-          <input type="text" id="fname" class="input-field" placeholder="First name (optional)">
-          <input type="email" id="email" class="input-field" placeholder="Your email address *" required>
-          <div class="error-msg" id="err">Please enter a valid email address.</div>
-          <button class="submit-btn" id="sub-btn" onclick="handleSubmit()">SEND ME THE FREE PDF →</button>
-        </div>
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="25c7e031-10cd-429c-97b5-7a5b2f857f1b"></script>
         <p class="form-note">No spam. Unsubscribe any time. You will receive the weekly Wellthy newsletter — systems for focus, energy and discipline.</p>
       </div>
     </div>
@@ -168,27 +163,5 @@ nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.15);pad
 
 <div class="abar"></div>
 
-<script>
-function validateEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
-function handleSubmit(){
-  const email=document.getElementById('email').value.trim();
-  const fname=document.getElementById('fname').value.trim();
-  const err=document.getElementById('err');
-  const btn=document.getElementById('sub-btn');
-  if(!validateEmail(email)){err.style.display='block';return;}
-  err.style.display='none';
-  btn.disabled=true;
-  btn.textContent='Sending...';
-  fetch('https://api.beehiiv.com/v2/publications/pub_d9211856-e49d-40fb-9d96-8880290d4ab8/subscriptions',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({email:email,first_name:fname||undefined,reactivate_existing:true,send_welcome_email:true,utm_source:'website',utm_medium:'free-reset-page'})
-  }).then(()=>redirect(email)).catch(()=>redirect(email));
-  if(typeof pintrk!=='undefined')pintrk('track','lead',{em:email});
-}
-function redirect(email){
-  window.location.href='/exclusive-offer.html?em='+encodeURIComponent(email);
-}
-</script>
 </body>
 </html>

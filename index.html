@@ -871,13 +871,8 @@ pintrk('page');
     <div class="srule"></div>
     <p class="final-sub">The protocol is ready. The system is built. The only variable is you. Start free — no credit card required.</p>
     <div id="final-form-wrap">
-      <div style="display:flex;max-width:440px;margin:0 auto 8px;">
-        <input type="email" id="final-email" placeholder="Your email address"
-          style="flex:1;padding:15px 18px;background:#0C120C;border:1px solid rgba(74,154,106,.25);border-right:none;color:#F2EFE8;font-size:13px;outline:none;font-family:Inter,sans-serif;">
-        <button onclick="handleFinalSubmit()" id="final-btn"
-          style="padding:15px 22px;background:linear-gradient(135deg,#C9A84C,#9A7030);color:#060A06;font-size:11px;font-weight:700;letter-spacing:.12em;border:none;cursor:pointer;font-family:Inter,sans-serif;white-space:nowrap;transition:opacity .3s;">
-          START FREE
-        </button>
+      <div style="max-width:440px;margin:0 auto 8px;">
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="25c7e031-10cd-429c-97b5-7a5b2f857f1b"></script>
       </div>
       <div id="final-error" style="display:none;font-size:11px;color:#C06040;text-align:center;margin-top:6px;">Please enter a valid email address.</div>
     </div>
@@ -944,28 +939,6 @@ pintrk('page');
 <script>
 function handleSubmit(e){e.preventDefault();window.location.href="/free-reset.html";e.target.reset();}
 
-function handleFinalSubmit(){
-  var email=document.getElementById('final-email').value.trim();
-  var btn=document.getElementById('final-btn');
-  var success=document.getElementById('final-success');
-  var err=document.getElementById('final-error');
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
-    err.style.display='block';
-    return;
-  }
-  err.style.display='none';
-  btn.disabled=true;
-  btn.textContent='Sending...';
-  fetch('https://api.beehiiv.com/v2/publications/pub_d9211856-e49d-40fb-9d96-8880290d4ab8/subscriptions',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({email:email,reactivate_existing:true,send_welcome_email:true,utm_source:'homepage',utm_medium:'final-cta'})
-  }).then(function(){
-    window.location.href='/exclusive-offer.html?em='+encodeURIComponent(email);
-  }).catch(function(){
-    window.location.href='/free-reset.html';
-  });
-}
 function toggleFaq(btn){
   const ans=btn.nextElementSibling;
   const arr=btn.querySelector(".faq-arrow");
