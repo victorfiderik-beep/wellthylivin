@@ -176,10 +176,9 @@ async function handleResetSubmit(ev){
   err.style.display='none';
   btn.disabled=true;btn.textContent='Sending...';
   try{
-    var r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'free-reset-page'})});
-    var d=await r.json().catch(function(){return {};});
-    if(r.ok&&d.ok){window.location.href='/exclusive-offer.html?em='+encodeURIComponent(email);return false;}
-    err.textContent=(d&&d.error==='not_configured')?'Signup is being set up — please try again shortly.':'Something went wrong — please try again.';
+    var r=await fetch('https://hooks.zapier.com/hooks/catch/29278554/49myzty/',{method:'POST',body:new URLSearchParams({email:email,source:'free-reset-page'})});
+    if(r.ok){window.location.href='/exclusive-offer.html?em='+encodeURIComponent(email);return false;}
+    err.textContent='Something went wrong — please try again.';
     err.style.display='block';
   }catch(e){
     err.textContent='Something went wrong — please try again.';

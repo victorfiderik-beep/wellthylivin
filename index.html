@@ -956,11 +956,10 @@ function handleFinalSubmit(){
   err.style.display='none';
   btn.disabled=true;
   btn.textContent='Sending...';
-  fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'homepage'})})
-  .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {ok:r.ok,d:d};});})
-  .then(function(res){
-    if(res.ok&&res.d.ok){window.location.href='/exclusive-offer.html?em='+encodeURIComponent(email);return;}
-    err.textContent=(res.d&&res.d.error==='not_configured')?'Signup is being set up — please try again shortly.':'Something went wrong — please try again.';
+  fetch('https://hooks.zapier.com/hooks/catch/29278554/49myzty/',{method:'POST',body:new URLSearchParams({email:email,source:'homepage'})})
+  .then(function(r){
+    if(r.ok){window.location.href='/exclusive-offer.html?em='+encodeURIComponent(email);return;}
+    err.textContent='Something went wrong — please try again.';
     err.style.display='block';
     btn.disabled=false;btn.textContent='START FREE';
   })
