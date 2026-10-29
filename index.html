@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wellthy Livin — Live Healthy • Live Wellthy</title>
-<meta name="description" content="The 30-day performance system for busy people who want deep focus, clean energy and real discipline — starting with your body, not your calendar.">
+<meta name="description" content="Every system you've tried died on Day 4. Wellthy Livin builds the biology-first system designed to survive it — starting free with the 3-Day Focus Reset.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -49,7 +49,7 @@ html{scroll-behavior:smooth;}
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-track{background:#060A06;}
 ::-webkit-scrollbar-thumb{background:#4A9A6A;border-radius:2px;}
-body{background:#060A06;color:#F2EFE8;font-family:"Inter",sans-serif;overflow-x:hidden;}
+body{background:#050505;color:#F2EFE8;font-family:"Inter",sans-serif;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;transition:all .3s;}
 img{max-width:100%;}
 
@@ -78,7 +78,7 @@ img{max-width:100%;}
 
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 28px 80px;position:relative;overflow:hidden;}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 28px 80px;position:relative;overflow:hidden;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23C9A84C' stroke-width='1' opacity='0.14'%3E%3Cpath d='M-20,620 L180,560 L380,640 L620,520 L820,590 L1020,500 L1220,560'/%3E%3Cpath d='M180,560 L260,480 L340,540'/%3E%3Cpath d='M620,520 L700,440 L780,500'/%3E%3Cpath d='M-20,180 L220,240 L420,160 L640,230 L900,170 L1220,220' opacity='0.7'/%3E%3C/g%3E%3C/svg%3E"),radial-gradient(ellipse at 85% 8%,rgba(201,168,76,.07),transparent 55%),radial-gradient(ellipse at 8% 92%,rgba(74,154,106,.06),transparent 55%);background-size:cover,auto,auto;}
 .hero-ring{position:absolute;border-radius:50%;pointer-events:none;}
 .hr1{width:500px;height:500px;border:1px solid rgba(74,154,106,.1);top:10%;right:-5%;} 
 .hr2{width:300px;height:300px;border:1px solid rgba(201,168,76,.06);top:18%;right:3%;}
@@ -260,7 +260,7 @@ img{max-width:100%;}
 .final-link:hover{color:#C9A84C;}
 
 /* FOOTER */
-footer{background:#060A06;border-top:1px solid rgba(74,154,106,.1);padding:52px 28px 24px;}
+footer{background:#050505;border-top:1px solid rgba(74,154,106,.1);padding:52px 28px 24px;}
 .foot-inner{max-width:1160px;margin:0 auto;}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:40px;}
 .foot-logo{height:24px;margin-bottom:14px;}
@@ -326,10 +326,10 @@ pintrk('page');
       <span class="for-text">FOR PEOPLE WHO KEEP STARTING OVER</span>
       <div class="for-dot"></div>
     </div>
-    <h1 class="hero-h">You don't have a<br>discipline problem.<br>You have a <em>system</em> problem.</h1>
+    <h1 class="hero-h">Every system you've tried died on <em>Day 4.</em><br>This one is built for <em>Day 4.</em></h1>
     <div class="hero-rule"></div>
     <p class="hero-problem">Every productivity system assumes you already have energy.</p>
-    <p class="hero-sub">WellthyFlow fixes the biology first — deep focus, clean energy and structured days in 30 days. No gym. No willpower. No starting over.</p>
+    <p class="hero-sub">WellthyFlow fixes the biology first — deep focus, clean energy, and structured days in 30 days. Start free with the 3-Day Focus Reset.</p>
 
     <div class="outcome-strip">
       <div class="outcome-item"><span>DEEP FOCUS</span></div>
@@ -339,12 +339,19 @@ pintrk('page');
     </div>
 
     <div class="hero-cta-group">
-      <a href="/free-reset.html" class="btn-primary">GET THE FREE 3-DAY RESET →</a>
-      <a href="#protocols" class="btn-secondary">Or start WellthyReset for $21 →</a>
+      <div style="display:flex;max-width:440px;margin:0 auto;width:100%;">
+        <input type="email" id="hero-email" placeholder="Your email address"
+          style="flex:1;padding:15px 18px;background:#0C120C;border:1px solid rgba(74,154,106,.25);border-right:none;color:#F2EFE8;font-size:13px;outline:none;font-family:Inter,sans-serif;">
+        <button onclick="handleHeroSubmit()" id="hero-btn"
+          style="padding:15px 22px;background:linear-gradient(135deg,#C9A84C,#9A7030);color:#060A06;font-size:11px;font-weight:700;letter-spacing:.12em;border:none;cursor:pointer;font-family:Inter,sans-serif;white-space:nowrap;transition:opacity .3s;">
+          SEND ME THE FREE RESET
+        </button>
+      </div>
+      <div id="hero-error" style="display:none;font-size:11px;color:#C06040;text-align:center;margin-top:8px;">Please enter a valid email address.</div>
+      <p style="font-size:11px;color:#2A4A2A;margin-top:10px;">Free · No credit card required · Your reset arrives in 2 minutes</p>
     </div>
 
     <div class="trust-strip">
-      <div class="trust-item"><div class="trust-dot"></div>247+ RESETS STARTED</div>
       <div class="trust-item"><div class="trust-dot"></div>7-DAY GUARANTEE</div>
       <div class="trust-item"><div class="trust-dot"></div>NO GYM NEEDED</div>
       <div class="trust-item"><div class="trust-dot"></div>INSTANT DOWNLOAD</div>
@@ -514,6 +521,38 @@ pintrk('page');
   </div>
 </section>
 
+
+<!-- FOUNDER -->
+<section class="founder-section reveal" id="about">
+  <div class="sw">
+    <div class="founder-grid">
+      <div>
+        <div class="founder-label">THE FOUNDER STORY</div>
+        <h2 class="founder-title">Why I built<br><em>Wellthy Livin.</em></h2>
+        <p class="founder-body">I spent years trying every productivity system, habit tracker and morning routine I could find. Atomic Habits. Deep Work. The 5AM Club. I started each one with full commitment — and quit by Day 4. Every time.</p>
+        <p class="founder-body">The problem wasn't my discipline. The problem was that every single system assumed I already had the energy and cognitive capacity to execute. They skipped the hardware entirely.</p>
+        <div class="founder-quote">
+          <p>"The day I fixed my biology first — the sleep, the fuel, the movement — everything else fell into place automatically. That insight became Wellthy Livin."</p>
+        </div>
+        <p class="founder-body">WellthyFlow is the system I wish had existed. Not motivation. Not inspiration. Architecture — built on the science of biological performance and designed to run even on your worst days.</p>
+        <div class="founder-credentials">
+          <div class="cred"><div class="cred-dot"></div><div class="cred-text">Built on research from Harvard Medical School, UCL, University of Pennsylvania</div></div>
+          <div class="cred"><div class="cred-dot"></div><div class="cred-text">Designed around Day 4 — the most common failure point in any 30-day programme</div></div>
+          <div class="cred"><div class="cred-dot"></div><div class="cred-text">Available questions: hello@wellthylivin.com</div></div>
+        </div>
+      </div>
+      <div class="founder-right">
+        <div class="method-card"><div class="method-num">THE METHOD</div><h3 class="method-title">Layer 1 — The Body</h3><p class="method-body">Clean fuel. Morning movement. Sleep protocol. Hydration. Fix the hardware before the software. This is what every other system skips.</p></div>
+        <div class="method-card"><div class="method-num">THE METHOD</div><h3 class="method-title">Layer 2 — The Mind</h3><p class="method-body">Deep work blocks. Distraction defense. Monk Mode. Six daily non-negotiables. Architecture replaces willpower — permanently.</p></div>
+        <div class="method-card"><div class="method-num">THE METHOD</div><h3 class="method-title">Layer 3 — The Identity</h3><p class="method-body">Daily declarations. I Am statements. Evidence log. The layer that makes everything else permanent. Most programmes never get here.</p></div>
+        <div style="background:#0A100A;padding:22px;margin-top:2px;">
+          <div style="font-size:9px;letter-spacing:.18em;color:#C9A84C;font-weight:600;margin-bottom:8px;">CONTACT</div>
+          <p style="font-size:12px;color:#3A5A3A;line-height:1.7;">Questions? Results to share? Email us directly — we read every message.<br><a href="mailto:hello@wellthylivin.com" style="color:#4A9A6A;">hello@wellthylivin.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ENERGY CHART -->
 <div style="background:#060D06;padding:64px 28px 72px;border-top:1px solid rgba(74,154,106,.08);">
@@ -721,52 +760,12 @@ pintrk('page');
     <!-- Proof bar -->
     <div style="display:flex;justify-content:center;gap:40px;margin-top:40px;flex-wrap:wrap;">
       <div style="text-align:center;">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#C9A84C;">247+</div>
-        <div style="font-size:9px;letter-spacing:.16em;color:#2A4A2A;">RESETS STARTED</div>
-      </div>
-      <div style="text-align:center;">
         <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#C9A84C;">Day 4</div>
         <div style="font-size:9px;letter-spacing:.16em;color:#2A4A2A;">THE FILTER POINT</div>
       </div>
       <div style="text-align:center;">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#C9A84C;">5★</div>
-        <div style="font-size:9px;letter-spacing:.16em;color:#2A4A2A;">AVERAGE RATING</div>
-      </div>
-      <div style="text-align:center;">
         <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#C9A84C;">7</div>
         <div style="font-size:9px;letter-spacing:.16em;color:#2A4A2A;">DAY GUARANTEE</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDER -->
-<section class="founder-section reveal" id="about">
-  <div class="sw">
-    <div class="founder-grid">
-      <div>
-        <div class="founder-label">THE FOUNDER STORY</div>
-        <h2 class="founder-title">Why I built<br><em>Wellthy Livin.</em></h2>
-        <p class="founder-body">I spent years trying every productivity system, habit tracker and morning routine I could find. Atomic Habits. Deep Work. The 5AM Club. I started each one with full commitment — and quit by Day 4. Every time.</p>
-        <p class="founder-body">The problem wasn't my discipline. The problem was that every single system assumed I already had the energy and cognitive capacity to execute. They skipped the hardware entirely.</p>
-        <div class="founder-quote">
-          <p>"The day I fixed my biology first — the sleep, the fuel, the movement — everything else fell into place automatically. That insight became Wellthy Livin."</p>
-        </div>
-        <p class="founder-body">WellthyFlow is the system I wish had existed. Not motivation. Not inspiration. Architecture — built on the science of biological performance and designed to run even on your worst days.</p>
-        <div class="founder-credentials">
-          <div class="cred"><div class="cred-dot"></div><div class="cred-text">Built on research from Harvard Medical School, UCL, University of Pennsylvania</div></div>
-          <div class="cred"><div class="cred-dot"></div><div class="cred-text">Designed around Day 4 — the most common failure point in any 30-day programme</div></div>
-          <div class="cred"><div class="cred-dot"></div><div class="cred-text">247+ people have started the reset. Available questions: hello@wellthylivin.com</div></div>
-        </div>
-      </div>
-      <div class="founder-right">
-        <div class="method-card"><div class="method-num">THE METHOD</div><h3 class="method-title">Layer 1 — The Body</h3><p class="method-body">Clean fuel. Morning movement. Sleep protocol. Hydration. Fix the hardware before the software. This is what every other system skips.</p></div>
-        <div class="method-card"><div class="method-num">THE METHOD</div><h3 class="method-title">Layer 2 — The Mind</h3><p class="method-body">Deep work blocks. Distraction defense. Monk Mode. Six daily non-negotiables. Architecture replaces willpower — permanently.</p></div>
-        <div class="method-card"><div class="method-num">THE METHOD</div><h3 class="method-title">Layer 3 — The Identity</h3><p class="method-body">Daily declarations. I Am statements. Evidence log. The layer that makes everything else permanent. Most programmes never get here.</p></div>
-        <div style="background:#0A100A;padding:22px;margin-top:2px;">
-          <div style="font-size:9px;letter-spacing:.18em;color:#C9A84C;font-weight:600;margin-bottom:8px;">CONTACT</div>
-          <p style="font-size:12px;color:#3A5A3A;line-height:1.7;">Questions? Results to share? Email us directly — we read every message.<br><a href="mailto:hello@wellthylivin.com" style="color:#4A9A6A;">hello@wellthylivin.com</a></p>
-        </div>
       </div>
     </div>
   </div>
@@ -884,7 +883,6 @@ pintrk('page');
     <div id="final-success" style="display:none;text-align:center;padding:8px 0;">
       <p style="font-size:14px;color:#4A9A6A;">✓ Check your inbox — your PDF arrives in 60 seconds.</p>
     </div>
-    <a href="https://wellthylivin.gumroad.com/l/evhjy" onclick="openGumroad(this);return false;" class="final-link">Or get WellthyFlow now for $45 →</a>
   </div>
 </section>
 
@@ -967,6 +965,31 @@ function handleFinalSubmit(){
     err.textContent='Something went wrong — please try again.';
     err.style.display='block';
     btn.disabled=false;btn.textContent='START FREE';
+  });
+}
+function handleHeroSubmit(){
+  var email=document.getElementById('hero-email').value.trim();
+  var btn=document.getElementById('hero-btn');
+  var err=document.getElementById('hero-error');
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+    err.textContent='Please enter a valid email address.';
+    err.style.display='block';
+    return;
+  }
+  err.style.display='none';
+  btn.disabled=true;
+  btn.textContent='Sending...';
+  fetch('https://hooks.zapier.com/hooks/catch/29278554/49myzty/',{method:'POST',body:new URLSearchParams({email:email,source:'homepage'})})
+  .then(function(r){
+    if(r.ok){window.location.href='/exclusive-offer.html?em='+encodeURIComponent(email);return;}
+    err.textContent='Something went wrong — please try again.';
+    err.style.display='block';
+    btn.disabled=false;btn.textContent='SEND ME THE FREE RESET';
+  })
+  .catch(function(){
+    err.textContent='Something went wrong — please try again.';
+    err.style.display='block';
+    btn.disabled=false;btn.textContent='SEND ME THE FREE RESET';
   });
 }
 function toggleFaq(btn){
