@@ -31,14 +31,22 @@ html{scroll-behavior:smooth;}
 body{background:#060A06;color:#F2EFE8;font-family:"Inter",sans-serif;min-height:100vh;}
 a{text-decoration:none;color:inherit;transition:all .3s;}
 .abar{height:5px;background:linear-gradient(90deg,#1A3A2A,#C9A84C,#4A9A6A,#C9A84C,#1A3A2A);}
-nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.15);padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);}
-.nav-logo{height:29px;width:auto;}
-.nav-links{display:flex;gap:28px;}
-.nav-link{font-size:11px;letter-spacing:.1em;color:#2A4A2A;transition:color .3s;}
+nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.12);padding:0 36px;height:62px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);}
+.nav-brand{display:flex;align-items:center;}
+.nav-logo{height:20px;width:auto;display:block;}
+.nav-links{display:flex;align-items:center;gap:36px;}
+.nav-item{position:relative;display:flex;align-items:center;}
+.nav-link{font-size:11px;letter-spacing:.12em;color:#3A5A3A;font-weight:400;transition:color .3s;white-space:nowrap;}
 .nav-link:hover{color:#4A9A6A;}
-.nav-cta{padding:8px 20px;background:linear-gradient(135deg,#C9A84C,#9A7030);color:#060A06;font-size:11px;font-weight:700;letter-spacing:.1em;}
+.nav-arrow{font-size:8px;margin-left:4px;opacity:.5;}
+.has-drop:hover .nav-drop{opacity:1;pointer-events:auto;transform:translateY(0);}
+.nav-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);background:#0A100A;border:1px solid rgba(74,154,106,.15);padding:8px;min-width:220px;display:flex;flex-direction:column;gap:2px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:200;}
+.drop-link{display:flex;align-items:center;gap:10px;padding:10px 12px;font-size:11px;color:#3A5A3A;letter-spacing:.06em;transition:all .25s;border-left:2px solid transparent;white-space:nowrap;}
+.drop-link:hover{background:#0C140C;color:#F2EFE8;border-left-color:#4A9A6A;}
+.drop-label{font-size:8px;letter-spacing:.1em;color:#C9A84C;font-weight:700;background:rgba(201,168,76,.1);padding:2px 7px;flex-shrink:0;}
+.nav-cta{padding:9px 22px;background:linear-gradient(135deg,#C9A84C,#9A7030);color:#060A06;font-size:11px;font-weight:700;letter-spacing:.12em;white-space:nowrap;transition:opacity .3s;}
 .nav-cta:hover{opacity:.85;}
-@media(max-width:640px){.nav-links{display:none;}}
+@media(max-width:700px){.nav-links{display:none;}}
 
 .wrap{max-width:900px;margin:0 auto;padding:60px 24px 80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
 .info-label{font-size:9px;letter-spacing:.28em;color:#4A9A6A;font-weight:600;margin-bottom:14px;}
@@ -93,10 +101,18 @@ nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.15);pad
 <body>
 <div class="abar"></div>
 <nav>
-  <a href="/index.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgNDAiIHdpZHRoPSIxOTIiIGhlaWdodD0iMzIiPgogIDx0ZXh0IHg9IjAiIHk9IjIyIiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjcwMCIgbGV0dGVyLXNwYWNpbmc9IjQiIGZpbGw9IiNGMkVGRTgiPldFTExUSFk8L3RleHQ+CiAgPHRleHQgeD0iMTIyIiB5PSIyMiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsJ1RpbWVzIE5ldyBSb21hbicsc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSI0IiBmaWxsPSIjQzlBODRDIj5MSVZJTjwvdGV4dD4KICA8bGluZSB4MT0iMCIgeTE9IjI3IiB4Mj0iMjI4IiB5Mj0iMjciIHN0cm9rZT0iIzRBOUE2QSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuNTUiLz4KICA8dGV4dCB4PSIwIiB5PSIzNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsJ1RpbWVzIE5ldyBSb21hbicsc2VyaWYiIGZvbnQtc2l6ZT0iNi41IiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iIzRBOUE2QSI+TElWRSBIRUFMVEhZIMK3IExJVkUgV0VMTFRIWTwvdGV4dD4KPC9zdmc+" alt="Wellthy Livin" class="nav-logo"></a>
+  <a href="/index.html" class="nav-brand"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjgiIHdpZHRoPSIyNDAiIGhlaWdodD0iMjgiPgogIDx0ZXh0IHg9IjAiIHk9IjIyIiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjcwMCIgbGV0dGVyLXNwYWNpbmc9IjQiIGZpbGw9IiNGMkVGRTgiPldFTExUSFk8L3RleHQ+CiAgPHRleHQgeD0iMTIyIiB5PSIyMiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsJ1RpbWVzIE5ldyBSb21hbicsc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSI0IiBmaWxsPSIjQzlBODRDIj5MSVZJTjwvdGV4dD4KPC9zdmc+" alt="Wellthy Livin" class="nav-logo"></a>
   <div class="nav-links">
     <a href="/index.html" class="nav-link">HOME</a>
-    <a href="/index.html#products" class="nav-link">PRODUCTS</a>
+    <div class="nav-item has-drop">
+      <a href="/index.html#protocols" class="nav-link">PROTOCOLS <span class="nav-arrow">▾</span></a>
+      <div class="nav-drop">
+        <a href="https://wellthylivin.gumroad.com/l/nkazc" class="drop-link">
+        <span class="drop-label">$21</span>7-Day Reset Foundation</a>
+        <a href="https://wellthylivin.gumroad.com/l/evhjy" class="drop-link" onclick="return openGumroad(this)"><span class="drop-label">$45</span>WellthyFlow — 30 Days</a>
+      </div>
+    </div>
+    <a href="/gear.html" class="nav-link">GEAR</a>
     <a href="/blog" class="nav-link">BLOG</a>
   </div>
   <a href="/free-reset.html" class="nav-ghost">GET FREE GUIDE →</a>
@@ -116,7 +132,6 @@ nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.15);pad
     <div class="trust">
       <div class="trust-item"><div class="tdot"></div>Free — no credit card required</div>
       <div class="trust-item"><div class="tdot"></div>PDF arrives in your inbox in 60 seconds</div>
-      <div class="trust-item"><div class="tdot"></div>247+ people have started this reset</div>
       <div class="trust-item"><div class="tdot"></div>Unsubscribe any time</div>
     </div>
   </div>
@@ -134,7 +149,6 @@ nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.15);pad
       </form>
     </div>
     <div class="stats">
-      <div class="stat"><div class="stat-n">247+</div><div class="stat-l">RESETS STARTED</div></div>
       <div class="stat"><div class="stat-n">Free</div><div class="stat-l">NO CREDIT CARD</div></div>
       <div class="stat"><div class="stat-n">5pg</div><div class="stat-l">PREMIUM PDF</div></div>
       <div class="stat"><div class="stat-n">60s</div><div class="stat-l">TO INBOX</div></div>
