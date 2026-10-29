@@ -55,7 +55,7 @@ nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.15);pad
 .disclaimer{font-size:11px;color:#1A3A2A;text-align:center;margin:0 auto 56px;max-width:500px;line-height:1.7;font-style:italic;}
 
 /* GEAR GRID */
-.gear-grid{max-width:900px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.gear-grid{display:flex;justify-content:center;padding:0;}
 
 /* GEAR CARD */
 .gear-card{background:#0A100A;display:flex;flex-direction:column;overflow:hidden;transition:background .3s;}
@@ -79,7 +79,7 @@ nav{background:rgba(6,10,6,.97);border-bottom:1px solid rgba(74,154,106,.15);pad
 /* PHILOSOPHY STRIP */
 .philosophy{max-width:900px;margin:52px auto 0;padding:0 28px;}
 .phi-rule{height:1px;background:linear-gradient(90deg,transparent,#4A9A6A,transparent);margin-bottom:32px;}
-.phi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.phi-grid{display:grid;grid-template-columns:1fr;max-width:600px;margin:0 auto;gap:2px;}
 .phi-item{background:#0A100A;padding:20px;border-top:2px solid transparent;}
 .phi-item.sage{border-top-color:#4A9A6A;}
 .phi-item.gold{border-top-color:#C9A84C;}
@@ -112,7 +112,7 @@ footer{border-top:1px solid rgba(74,154,106,.1);padding:32px 28px 20px;}
 .aff-disc{font-size:10px;color:#1A3A2A;width:100%;margin-top:4px;font-style:italic;}
 
 @media(max-width:680px){
-  .gear-grid{grid-template-columns:1fr;}
+  .gear-grid{display:flex;justify-content:center;padding:0;}
   .phi-grid{grid-template-columns:1fr;}
   .pcta-btns{flex-direction:column;align-items:center;}
 }
@@ -148,7 +148,7 @@ footer{border-top:1px solid rgba(74,154,106,.1);padding:32px 28px 20px;}
   <h1 class="hero-h">Rebuilding your mental software<br>is only <em>half</em> the battle.</h1>
   <div class="rule"></div>
   <p class="hero-sub">The protocols inside the Wellthy system rely entirely on physical triggers. To completely lock in your dopamine baseline and secure your deep work blocks, your environment's hardware must match your software.</p>
-  <p class="disclaimer">These are the three physical non-negotiables the Wellthy system recommends. Some links below are affiliate links — we earn a small commission at no extra cost to you. We only recommend tools we would use ourselves.</p>
+  <p class="disclaimer">This is the one physical tool the Wellthy system recommends to anchor your morning protocol. The link below is an affiliate link — we earn a small commission at no extra cost to you. We only recommend tools we would use ourselves.</p>
 </div>
 
 <!-- GEAR GRID -->
@@ -172,8 +172,8 @@ footer{border-top:1px solid rgba(74,154,106,.1);padding:32px 28px 20px;}
       <div class="card-why-label">WHY IT WORKS</div>
       <p class="card-why">To delay morning caffeine by 90–120 minutes without brain fog, you need clean adaptogenic support. Mushroom-based blends — Lion's Mane, Cordyceps, L-Tyrosine — fuel natural morning dopamine production before your deep work block begins. Completely eliminates the 3 PM adenosine crash.</p>
       <div class="card-pick">
-        <strong>THE PICKS</strong>
-        MUD/WTR or Four Sigmatic Focus Blend — the gold standards in the biohacking world. High-commission affiliate programmes via Impact.com and ShareASale.
+        <strong>THE PICK</strong>
+        Magic Mind — a 2oz productivity shot formulated with matcha, lion's mane, ashwagandha and 12 active ingredients. The cleanest alternative to a cortisol-spiking morning coffee on an empty stomach.
       </div>
       <a href="https://magicmind.com/SFJWBMWG" class="card-cta" target="_blank">
         OPTIMISE YOUR MORNING STACK <span class="card-cta-arrow">→</span>
@@ -181,57 +181,6 @@ footer{border-top:1px solid rgba(74,154,106,.1);padding:32px 28px 20px;}
     </div>
   </div>
 
-  <!-- CARD 2 — Focus Firewall -->
-  <div class="gear-card">
-    <div class="card-img-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="160" height="160">
-  <circle cx="100" cy="95" r="58" fill="#0C1A0C" stroke="#4A9A6A" stroke-width="1"/>
-  <circle cx="100" cy="95" r="48" fill="#0A100A" stroke="#1A3A2A" stroke-width="0.5"/>
-  <path d="M100 95 L100 47 A48 48 0 0 1 141 71 Z" fill="#C9A84C" opacity="0.9"/>
-  <circle cx="100" cy="95" r="6" fill="#4A9A6A"/>
-  <line x1="100" y1="37" x2="100" y2="27" stroke="#4A9A6A" stroke-width="1.5"/>
-  <text x="100" y="168" font-family="Georgia,serif" font-size="9" letter-spacing="2" fill="#4A9A6A" text-anchor="middle">VISUAL TIMER</text>
-  <text x="100" y="182" font-family="Georgia,serif" font-size="7" letter-spacing="1.5" fill="#C9A84C" text-anchor="middle">FOCUS FIREWALL</text>
-</svg></div>
-    <div class="card-body">
-      <div class="card-tag">02 — THE FOCUS FIREWALL</div>
-      <div class="card-name">Analog Visual Timer</div>
-      <div class="card-why-label">WHY IT WORKS</div>
-      <p class="card-why">Willpower is a finite biological resource. A phone on your desk reduces cognitive capacity by up to 20% — even face-down. A physical, analog visual timer gives your brain a clear cue for your 45-minute deep work blocks without requiring you to touch a screen.</p>
-      <div class="card-pick">
-        <strong>THE PICK</strong>
-        Time Timer PLUS or MOD Edition — features a solid coloured disk that silently disappears as time elapses. No ticking. No digital screen. Pure deep work architecture.
-      </div>
-      <a href="#" class="card-cta" style="opacity:.4;cursor:not-allowed;pointer-events:none;">
-        SECURE THE ANALOG TIMER — COMING SOON
-      </a>
-    </div>
-  </div>
-
-  <!-- CARD 3 — Circadian Protection -->
-  <div class="gear-card">
-    <div class="card-img-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="160" height="160">
-  <line x1="20" y1="95" x2="52" y2="95" stroke="#4A9A6A" stroke-width="1.5"/>
-  <line x1="148" y1="95" x2="180" y2="95" stroke="#4A9A6A" stroke-width="1.5"/>
-  <rect x="52" y="72" width="38" height="46" rx="10" fill="#C9A84C" opacity="0.25" stroke="#C9A84C" stroke-width="1.5"/>
-  <rect x="110" y="72" width="38" height="46" rx="10" fill="#C9A84C" opacity="0.25" stroke="#C9A84C" stroke-width="1.5"/>
-  <path d="M90 95 Q100 88 110 95" fill="none" stroke="#4A9A6A" stroke-width="1.5"/>
-  <text x="100" y="168" font-family="Georgia,serif" font-size="9" letter-spacing="2" fill="#4A9A6A" text-anchor="middle">AMBER LENSES</text>
-  <text x="100" y="182" font-family="Georgia,serif" font-size="7" letter-spacing="1.5" fill="#C9A84C" text-anchor="middle">CIRCADIAN PROTECTION</text>
-</svg></div>
-    <div class="card-body">
-      <div class="card-tag">03 — CIRCADIAN PROTECTION</div>
-      <div class="card-name">Amber Blue-Light Blockers</div>
-      <div class="card-why-label">WHY IT WORKS</div>
-      <p class="card-why">Your evening recovery system determines your morning focus potential. Artificial blue light after 10 PM suppresses melatonin production for up to 3 hours. Certified amber lenses block the exact wavelengths that disrupt your circadian rhythm — protecting your Delta-wave sleep and morning cognitive output.</p>
-      <div class="card-pick">
-        <strong>THE PICKS</strong>
-        Swanwick Night Swannies or Ra Optics Sunset Lenses — the gold standards in the biohacking world. Unlike cheap clear lenses, these are certified to block 100% of melatonin-disrupting wavelengths.
-      </div>
-      <a href="https://www.swanwicksleep.com/?ref=VICTORFIDERIKUMO" class="card-cta" target="_blank">
-        VIEW CERTIFIED BLOCKERS <span class="card-cta-arrow">→</span>
-      </a>
-    </div>
-  </div>
 
 </div>
 
@@ -244,16 +193,8 @@ footer{border-top:1px solid rgba(74,154,106,.1);padding:32px 28px 20px;}
       <div class="phi-title">FIX THE HARDWARE</div>
       <div class="phi-body">Every tool on this page removes a biological obstacle — not adds a habit. Your environment runs the protocol before your willpower does.</div>
     </div>
-    <div class="phi-item gold">
-      <div class="phi-num">02</div>
-      <div class="phi-title">CURATED NOT SPONSORED</div>
-      <div class="phi-body">We only recommend tools the biohacking and performance community already trusts. No cheap gadgets. No generic Amazon finds. Premium and proven only.</div>
-    </div>
-    <div class="phi-item dim">
-      <div class="phi-num">03</div>
-      <div class="phi-title">SOFTWARE COMES FIRST</div>
-      <div class="phi-body">Gear without protocol is just shopping. Start with the free 3-Day Reset to build the system. Then use these tools to lock it in permanently.</div>
-    </div>
+    
+    
   </div>
 </div>
 

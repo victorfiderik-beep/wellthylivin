@@ -691,30 +691,30 @@ pintrk('page');
 <!-- TESTIMONIALS -->
 <section class="testi-section reveal" id="proof">
   <div class="sw">
-    <span class="slabel">EARLY RESULTS</span>
+    <span class="slabel">WHAT PEOPLE ARE SAYING</span>
     <h2 class="stitle">Real people. <em>Real outcomes.</em></h2>
     <div class="srule"></div>
     <p class="ssub">These are early users of the Wellthy protocol. Individual results depend on effort and consistency.</p>
     <div class="testi-grid">
       <div class="testi">
         <div class="stars">★★★★★</div>
-        <p class="testi-q">"Not another motivational PDF. This is a literal operating system. I dropped 11lbs in 30 days without obsessing over food. The system just runs."</p>
-        <div class="testi-name">Marcus T.</div>
-        <div class="testi-role">ENTREPRENEUR</div>
+        <p class="testi-q">"I stopped trying to find motivation and just followed the checklist. By Day 7 the morning anchor was automatic — I didn't have to think about it."</p>
+        <div class="testi-name">Early Reset User</div>
+        <div class="testi-role">COMPLETED 7-DAY RESET</div>
         <div class="testi-result">↑ LOST 11LBS IN 30 DAYS</div>
       </div>
       <div class="testi">
         <div class="stars">★★★★★</div>
-        <p class="testi-q">"The Monk Mode system rewired how I approach every morning. I used to scroll for an hour. Now I complete the protocol before 8am. Everything changed."</p>
-        <div class="testi-name">Sarah K.</div>
-        <div class="testi-role">REMOTE CONSULTANT</div>
+        <p class="testi-q">"The 3PM crash was destroying my afternoons. After clean fuelling for 5 days it was completely gone. I didn't realise how much food was affecting my focus."</p>
+        <div class="testi-name">Early Reset User</div>
+        <div class="testi-role">COMPLETED 7-DAY RESET</div>
         <div class="testi-result">↑ PHONE-FREE MORNINGS EVERY DAY</div>
       </div>
       <div class="testi">
         <div class="stars">★★★★★</div>
-        <p class="testi-q">"The Identity layer is what separates this from everything I've tried. I stopped trying to change my habits and started changing who I am. It worked."</p>
-        <div class="testi-name">James R.</div>
-        <div class="testi-role">SALES MANAGER</div>
+        <p class="testi-q">"Every protocol I've tried fell apart by Day 4. This one was designed for that — it literally tells you it's coming. Passing through it felt different this time."</p>
+        <div class="testi-name">Early WellthyFlow User</div>
+        <div class="testi-role">COMPLETED 30-DAY PROTOCOL</div>
         <div class="testi-result">↑ COMPLETED ALL 30 DAYS</div>
       </div>
     </div>
@@ -725,8 +725,8 @@ pintrk('page');
         <div style="font-size:9px;letter-spacing:.16em;color:#2A4A2A;">RESETS STARTED</div>
       </div>
       <div style="text-align:center;">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#C9A84C;">87.5%</div>
-        <div style="font-size:9px;letter-spacing:.16em;color:#2A4A2A;">EMAIL OPEN RATE</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#C9A84C;">Day 4</div>
+        <div style="font-size:9px;letter-spacing:.16em;color:#2A4A2A;">THE FILTER POINT</div>
       </div>
       <div style="text-align:center;">
         <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#C9A84C;">5★</div>
@@ -870,11 +870,17 @@ pintrk('page');
     <h2 class="final-h">30 days from now you will either have a new <em>system</em> — or another excuse.</h2>
     <div class="srule"></div>
     <p class="final-sub">The protocol is ready. The system is built. The only variable is you. Start free — no credit card required.</p>
-    <form id="final-form" onsubmit="return handleFinalSubmit(event);" style="max-width:440px;margin:0 auto 8px;">
-      <input id="final-email" type="email" placeholder="Enter your email" required style="width:100%;padding:14px 16px;background:#080E08;border:1px solid rgba(74,154,106,.2);color:#F2EFE8;font-size:13px;font-family:Inter,sans-serif;outline:none;margin-bottom:10px;">
-      <button id="final-btn" type="submit" style="width:100%;padding:15px;background:linear-gradient(135deg,#C9A84C,#9A7030);color:#060A06;font-size:12px;font-weight:700;letter-spacing:.12em;border:none;cursor:pointer;">GET INSTANT ACCESS →</button>
+    <div id="final-form-wrap">
+      <div style="display:flex;max-width:440px;margin:0 auto 8px;">
+        <input type="email" id="final-email" placeholder="Your email address"
+          style="flex:1;padding:15px 18px;background:#0C120C;border:1px solid rgba(74,154,106,.25);border-right:none;color:#F2EFE8;font-size:13px;outline:none;font-family:Inter,sans-serif;">
+        <button onclick="handleFinalSubmit()" id="final-btn"
+          style="padding:15px 22px;background:linear-gradient(135deg,#C9A84C,#9A7030);color:#060A06;font-size:11px;font-weight:700;letter-spacing:.12em;border:none;cursor:pointer;font-family:Inter,sans-serif;white-space:nowrap;transition:opacity .3s;">
+          START FREE
+        </button>
+      </div>
       <div id="final-error" style="display:none;font-size:11px;color:#C06040;text-align:center;margin-top:6px;">Please enter a valid email address.</div>
-    </form>
+    </div>
     <div id="final-success" style="display:none;text-align:center;padding:8px 0;">
       <p style="font-size:14px;color:#4A9A6A;">✓ Check your inbox — your PDF arrives in 60 seconds.</p>
     </div>
@@ -902,7 +908,6 @@ pintrk('page');
       <div>
         <div class="foot-col-title">COMPANY</div>
         <div class="foot-links">
-          <a href="#about" class="foot-link">About</a>
           <a href="/blog" class="foot-link">Blog</a>
           <a href="mailto:hello@wellthylivin.com" class="foot-link">Contact</a>
         </div>
@@ -919,6 +924,7 @@ pintrk('page');
           <a href="https://www.instagram.com/wellthy.livin" target="_blank" class="foot-link">Instagram</a>
           <a href="https://www.tiktok.com/@wellthy.livin" target="_blank" class="foot-link">TikTok</a>
           <a href="https://ca.pinterest.com/WellthyLivin/" target="_blank" class="foot-link">Pinterest</a>
+          <a href="https://x.com/wellthylivin" target="_blank" class="foot-link">X (Twitter)</a>
         </div>
       </div>
     </div>
@@ -938,6 +944,32 @@ pintrk('page');
 <script>
 function handleSubmit(e){e.preventDefault();window.location.href="/free-reset.html";e.target.reset();}
 
+function handleFinalSubmit(){
+  var email=document.getElementById('final-email').value.trim();
+  var btn=document.getElementById('final-btn');
+  var err=document.getElementById('final-error');
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+    err.textContent='Please enter a valid email address.';
+    err.style.display='block';
+    return;
+  }
+  err.style.display='none';
+  btn.disabled=true;
+  btn.textContent='Sending...';
+  fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'homepage'})})
+  .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {ok:r.ok,d:d};});})
+  .then(function(res){
+    if(res.ok&&res.d.ok){window.location.href='/exclusive-offer.html?em='+encodeURIComponent(email);return;}
+    err.textContent=(res.d&&res.d.error==='not_configured')?'Signup is being set up — please try again shortly.':'Something went wrong — please try again.';
+    err.style.display='block';
+    btn.disabled=false;btn.textContent='START FREE';
+  })
+  .catch(function(){
+    err.textContent='Something went wrong — please try again.';
+    err.style.display='block';
+    btn.disabled=false;btn.textContent='START FREE';
+  });
+}
 function toggleFaq(btn){
   const ans=btn.nextElementSibling;
   const arr=btn.querySelector(".faq-arrow");
@@ -965,29 +997,5 @@ function openGumroad(el) {
   return false;
 }
 </script>
-<script>
-function validateFinalEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
-async function handleFinalSubmit(ev){
-  ev.preventDefault();
-  var email=document.getElementById('final-email').value.trim();
-  var err=document.getElementById('final-error');
-  var btn=document.getElementById('final-btn');
-  if(!validateFinalEmail(email)){err.textContent='Please enter a valid email address.';err.style.display='block';return false;}
-  err.style.display='none';
-  btn.disabled=true;btn.textContent='Sending...';
-  try{
-    var r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'homepage'})});
-    var d=await r.json().catch(function(){return {};});
-    if(r.ok&&d.ok){window.location.href='/exclusive-offer.html?em='+encodeURIComponent(email);return false;}
-    err.textContent=(d&&d.error==='not_configured')?'Signup is being set up — please try again shortly.':'Something went wrong — please try again.';
-    err.style.display='block';
-  }catch(e){
-    err.textContent='Something went wrong — please try again.';
-    err.style.display='block';
-  }
-  btn.disabled=false;btn.textContent='GET INSTANT ACCESS →';
-  return false;
-}
-</script>
 </body>
-</html><!-- vercel git trigger -->
+</html>
